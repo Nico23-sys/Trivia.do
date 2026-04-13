@@ -23,25 +23,21 @@ public class Usuario implements Serializable {
     @Column(name = "nickname", nullable = false, unique = true, length = 50)
     private String nickname;
 
-    // Usamos el convertidor AES del Commit 3
+    //convertidor AES
     @Column(name = "password", nullable = false)
     @Convert(converter = EncryptionConverter.class)
     private String password;
 
-    // Para el control de acceso (panel de administración futuro)
     @Column(name = "es_admin", nullable = false)
     private Boolean esAdmin = false;
 
-    // Puntuación global acumulada para el Leaderboard (Ranking)
     @Column(name = "puntuacion_global", nullable = false)
     private Long puntuacionGlobal = 0L;
 
-    // Fecha de alta en el sistema
     @Column(name = "fecha_registro", nullable = false, updatable = false)
     private LocalDateTime fechaRegistro;
 
     public Usuario() {
-        // Constructor vacío obligatorio para Hibernate
     }
 
     public Usuario(String nickname, String password) {
@@ -52,10 +48,7 @@ public class Usuario implements Serializable {
         this.fechaRegistro = LocalDateTime.now();
     }
 
-    // --- GETTERS Y SETTERS ---
-
     public Integer getId() { return id; }
-    // No ponemos setId() porque la Base de Datos autogenera el ID (Identity)
 
     public String getNickname() { return nickname; }
     public void setNickname(String nickname) { this.nickname = nickname; }
@@ -69,8 +62,7 @@ public class Usuario implements Serializable {
     public Long getPuntuacionGlobal() { return puntuacionGlobal; }
     public void setPuntuacionGlobal(Long puntuacionGlobal) { this.puntuacionGlobal = puntuacionGlobal; }
 
-    // Método de conveniencia (Helper) para sumar puntos fácilmente sin sacar la lógica fuera
-    public void sumarPuntos(Long puntos) {
+     public void sumarPuntos(Long puntos) {
         this.puntuacionGlobal += puntos;
     }
 

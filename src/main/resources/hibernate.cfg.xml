@@ -11,11 +11,13 @@
         <property name="hibernate.show_sql">true</property> <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Usuario"/>
-
         <property name="org.hibernate.envers.audit_table_suffix">_AUD</property>
         <property name="org.hibernate.envers.revision_field_name">REV</property>
         <property name="org.hibernate.envers.revision_type_field_name">REVTYPE</property>
 
-    </session-factory>
+        <mapping class="edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Usuario"/>
+        <mapping class="edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Partida"/>
+        <mapping class="edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta"/>
+
+     </session-factory>
 </hibernate-configuration>
