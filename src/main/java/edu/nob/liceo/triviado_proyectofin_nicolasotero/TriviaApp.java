@@ -2,6 +2,7 @@ package edu.nob.liceo.triviado_proyectofin_nicolasotero;
 
 import edu.nob.liceo.triviado_proyectofin_nicolasotero.service.UsuarioService;
 import edu.nob.liceo.triviado_proyectofin_nicolasotero.util.HibernateUtil;
+import edu.nob.liceo.triviado_proyectofin_nicolasotero.util.SceneManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ public class TriviaApp extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 400, 500);
         stage.setTitle("Login");
         stage.setScene(scene);
+        SceneManager.setPrimaryStage(stage);
         stage.show();
     }
 
