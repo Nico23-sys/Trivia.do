@@ -86,7 +86,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                edu.nob.liceo.triviado_proyectofin_nicolasotero/edu.nob.liceo.triviado_proyectofin_nicolasotero.HelloApplication
+                               edu.nob.liceo.triviado_proyectofin_nicolasotero.TriviaApp
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
