@@ -2,6 +2,8 @@ package edu.nob.liceo.triviado_proyectofin_nicolasotero.controllers;
 
 import edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Usuario;
 import edu.nob.liceo.triviado_proyectofin_nicolasotero.service.UsuarioService;
+import edu.nob.liceo.triviado_proyectofin_nicolasotero.util.SceneManager;
+import edu.nob.liceo.triviado_proyectofin_nicolasotero.util.UserSession;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -11,8 +13,7 @@ import javafx.scene.control.TextField;
 import java.util.Optional;
 
 public class LoginController {
-    @FXML
-    private TextField txtNickname;
+    @FXML private TextField txtNickname;
     @FXML private PasswordField txtPassword;
     @FXML private Label lblError;
 
@@ -28,6 +29,7 @@ public class LoginController {
         txtNickname.setDisable(true);
         txtPassword.setDisable(true);
 
+        // ¡Usamos Task para no bloquear la UI como pide el profe!
         Task<Optional<Usuario>> loginTask = new Task<>() {
             @Override
             protected Optional<Usuario> call() throws Exception {
@@ -43,7 +45,10 @@ public class LoginController {
             if (usuario.isPresent()) {
                 lblError.setStyle("-fx-text-fill: green;");
                 lblError.setText("¡Bienvenido " + usuario.get().getNickname() + "!");
-                // TODO: En el siguiente commit haremos el cambio de pantalla al Menú Principal
+                javafx.application.Platform.runLater(() -> {
+                    UserSession.getInstance().setUsuarioActual(usuario.get());
+                    SceneManager.switchScene("/edu/nob/liceo/triviado_proyectofin_nicolasotero/menu-view.fxml", "Menú Principal");
+                });
             } else {
                 lblError.setStyle("-fx-text-fill: red;");
                 lblError.setText("Credenciales incorrectas.");
