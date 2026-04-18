@@ -18,6 +18,7 @@
         <mapping class="edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Usuario"/>
         <mapping class="edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Partida"/>
         <mapping class="edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta"/>
+        <mapping class="edu.nob.liceo.triviado_proyectofin_nicolasotero.model.JugadaDetalle"/>
 
      </session-factory>
 </hibernate-configuration>
