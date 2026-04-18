@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.nob.liceo.triviado_proyectofin_nicolasotero.controllers.RegistroController">
+    <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/></padding>
+
+    <Label text="Crear Cuenta" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="txtNickname" promptText="Tu Nickname"/>
+    <PasswordField fx:id="txtPassword" promptText="Tu Contraseña"/>
+    <PasswordField fx:id="txtPasswordConfirm" promptText="Repite Contraseña"/>
+
+    <Label fx:id="lblInfo" />
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Registrarme" onAction="#handleRegistrar" defaultButton="true"/>
+        <Button text="Volver al Login" onAction="#handleVolver"/>
+    </HBox>
+</VBox>

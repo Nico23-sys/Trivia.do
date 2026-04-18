@@ -60,5 +60,6 @@ public class LoginController {
 
     @FXML
     protected void handleRegistro() {
+        SceneManager.switchScene("/edu/nob/liceo/triviado_proyectofin_nicolasotero/registro-view.fxml", "Registro");
     }
 }
