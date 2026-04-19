@@ -28,6 +28,11 @@ public class MenuController {
     }
 
     @FXML
+    protected void handleJugarSolitario() {
+        SceneManager.switchScene("/edu/nob/liceo/triviado_proyectofin_nicolasotero/juego-view.fxml", "Jugando en Solitario");
+    }
+
+    @FXML
     protected void handleLogout() {
         UserSession.getInstance().cerrarSesion();
         SceneManager.switchScene("/edu/nob/liceo/triviado_proyectofin_nicolasotero/login-view.fxml", "Login");

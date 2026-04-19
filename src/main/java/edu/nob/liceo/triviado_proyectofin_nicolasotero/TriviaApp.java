@@ -32,6 +32,24 @@ public class TriviaApp extends Application {
         } catch (Exception e) {
             System.out.println("El usuario administrador ya existe. Todo OK.");
         }
+
+        edu.nob.liceo.triviado_proyectofin_nicolasotero.dao.PreguntaDAO pDao = new edu.nob.liceo.triviado_proyectofin_nicolasotero.dao.PreguntaDAO();
+        if (pDao.obtenerPreguntasAleatorias(1).isEmpty()) {
+            System.out.println("La base de datos está vacía. Inyectando las 10 preguntas oficiales...");
+
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿Cuál es el planeta más grande del sistema solar?", "Júpiter", "Marte", "Saturno", "Ciencia"));
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿En qué año llegó el hombre a la luna?", "1969", "1958", "1972", "Historia"));
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿Quién pintó la Mona Lisa?", "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Arte"));
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿Cuál es el metal más caro del mundo?", "Rodio", "Oro", "Platino", "Ciencia"));
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿Cuál es la capital de Australia?", "Canberra", "Sídney", "Melbourne", "Geografía"));
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿Qué órgano del cuerpo humano consume más energía?", "El cerebro", "El corazón", "El hígado", "Biología"));
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿En qué país se encuentra la Torre de Pisa?", "Italia", "Francia", "España", "Geografía"));
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿Quién escribió 'Don Quijote de la Mancha'?", "Miguel de Cervantes", "Lope de Vega", "Gabriel García Márquez", "Literatura"));
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿Cuál es el océano más grande del mundo?", "Océano Pacífico", "Océano Atlántico", "Océano Índico", "Geografía"));
+            pDao.save(new edu.nob.liceo.triviado_proyectofin_nicolasotero.model.Pregunta("¿Qué gas respiramos para vivir?", "Oxígeno", "Dióxido de Carbono", "Nitrógeno", "Ciencia"));
+
+            System.out.println("Preguntas inyectadas correctamente.");
+        }
     }
 
     @Override

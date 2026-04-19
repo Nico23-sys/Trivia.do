@@ -11,7 +11,7 @@
     <Label fx:id="lblBienvenida" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
     <Label fx:id="lblPuntos" style="-fx-font-size: 16px; -fx-text-fill: #555555;"/>
 
-    <Button text="Jugar Solitario" prefWidth="150" />
+    <Button text="Jugar Solitario" onAction="#handleJugarSolitario" prefWidth="150" />
     <Button text="Multijugador" prefWidth="150" />
     <Button text="Ranking Global" prefWidth="150" />
 

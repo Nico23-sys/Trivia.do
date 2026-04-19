@@ -31,7 +31,7 @@ public class JuegoController {
     public void initialize() {
         // Iniciamos partida cargando 5 preguntas para probar
         partidaActual = juegoService.iniciarPartidaSolitario(UserSession.getInstance().getUsuarioActual());
-        preguntas = juegoService.cargarPreguntasParaPartida(5);
+        preguntas = juegoService.cargarPreguntasParaPartida(10);
 
         if (preguntas.isEmpty()) {
             lblEnunciado.setText("¡No hay preguntas en la base de datos!");
