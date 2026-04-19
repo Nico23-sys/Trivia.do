@@ -20,6 +20,7 @@ public class TriviaApp extends Application {
         stage.setTitle("Login");
         stage.setScene(scene);
         SceneManager.setPrimaryStage(stage);
+        new edu.nob.liceo.triviado_proyectofin_nicolasotero.network.server.ServidorTrivia().iniciarServidor();
         stage.show();
     }
 
