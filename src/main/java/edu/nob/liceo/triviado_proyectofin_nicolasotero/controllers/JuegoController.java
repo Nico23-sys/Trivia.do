@@ -61,7 +61,7 @@ public class JuegoController {
         Button btnClicado = (Button) event.getSource();
         String respuestaElegida = btnClicado.getText();
         Pregunta p = preguntas.get(indiceActual);
-a
+
         boolean esCorrecta = respuestaElegida.equals(p.getCorrecta());
         if (esCorrecta) {
             aciertos += 10;

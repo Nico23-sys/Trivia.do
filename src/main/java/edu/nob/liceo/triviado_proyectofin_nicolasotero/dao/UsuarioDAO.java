@@ -42,4 +42,12 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
     }
+
+    public java.util.List<Usuario> obtenerTopJugadores(int limite) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.createQuery("FROM Usuario ORDER BY puntuacionGlobal DESC", Usuario.class)
+                    .setMaxResults(limite)
+                    .list();
+        }
+    }
 }

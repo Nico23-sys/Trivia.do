@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.nob.liceo.triviado_proyectofin_nicolasotero.controllers.RankingController">
+    <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/></padding>
+
+    <Label text="TOP 10 MEJORES JUGADORES" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <ListView fx:id="listaRanking" prefHeight="300" prefWidth="300"/>
+
+    <Button text="Volver al Menú" onAction="#handleVolver"/>
+</VBox>
