@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.nob.liceo.triviado_proyectofin_nicolasotero.controllers.AdminController" style="-fx-padding: 20;">
+
+    <Label text="PANEL DE ADMINISTRACIÓN" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="txtEnunciado" promptText="Enunciado" prefWidth="200"/>
+        <TextField fx:id="txtCorrecta" promptText="R. Correcta"/>
+    </HBox>
+    <HBox spacing="10">
+        <TextField fx:id="txtFalsa1" promptText="R. Falsa 1"/>
+        <TextField fx:id="txtFalsa2" promptText="R. Falsa 2"/>
+        <TextField fx:id="txtCategoria" promptText="Categoría"/>
+    </HBox>
+
+    <Button text="Añadir Pregunta" onAction="#handleAnadirPregunta"/>
+    <Label fx:id="lblEstado" textFill="GREEN"/>
+
+    <Button text="Volver al Menú" onAction="#handleVolver"/>
+</VBox>

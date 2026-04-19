@@ -32,9 +32,14 @@ public class MenuController {
         SceneManager.switchScene("/edu/nob/liceo/triviado_proyectofin_nicolasotero/juego-view.fxml", "Jugando en Solitario");
     }
 
+    @FXML protected void handleRanking() { SceneManager.switchScene("/edu/nob/liceo/triviado_proyectofin_nicolasotero/ranking-view.fxml", "Ranking"); }
+    @FXML protected void handleAdmin() { SceneManager.switchScene("/edu/nob/liceo/triviado_proyectofin_nicolasotero/admin-view.fxml", "Admin Panel"); }
+
     @FXML
     protected void handleLogout() {
         UserSession.getInstance().cerrarSesion();
         SceneManager.switchScene("/edu/nob/liceo/triviado_proyectofin_nicolasotero/login-view.fxml", "Login");
     }
+
+
 }

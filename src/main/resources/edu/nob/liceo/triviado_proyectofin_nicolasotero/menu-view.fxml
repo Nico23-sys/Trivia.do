@@ -13,9 +13,9 @@
 
     <Button text="Jugar Solitario" onAction="#handleJugarSolitario" prefWidth="150" />
     <Button text="Multijugador" prefWidth="150" />
-    <Button text="Ranking Global" prefWidth="150" />
+    <Button text="Ranking Global" onAction="#handleRanking" prefWidth="150" />
 
-    <Button fx:id="btnAdmin" text="Panel de Administración" prefWidth="150" visible="false" managed="false"/>
+    <Button fx:id="btnAdmin" text="Panel de Administración" onAction="#handleAdmin" prefWidth="150" visible="false" managed="false"/>
 
     <Button text="Cerrar Sesión" onAction="#handleLogout" prefWidth="150" style="-fx-text-fill: red;"/>
 </VBox>
